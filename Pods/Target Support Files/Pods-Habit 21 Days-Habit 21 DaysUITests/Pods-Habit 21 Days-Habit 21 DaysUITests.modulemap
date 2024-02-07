@@ -1,0 +1,6 @@
+framework module Pods_Habit_21_Days_Habit_21_DaysUITests {
+  umbrella header "Pods-Habit 21 Days-Habit 21 DaysUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

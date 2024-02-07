@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>RooneySansRegular.OTF</string>
+		<string>RooneySansBold.OTF</string>
+		<string>RooneySansMediumIt.OTF</string>
+		<string>RooneySansMedium.OTF</string>
+		<string>RooneySansLightIt.OTF</string>
+		<string>RooneySansLight.OTF</string>
+		<string>RooneySansItalic.OTF</string>
+		<string>RooneySansHvIt.OTF</string>
+		<string>RooneySansHv.OTF</string>
+		<string>RooneySansBoldIt.OTF</string>
+		<string>RooneySansBlkIt.OTF</string>
+		<string>RooneySansBlk.OTF</string>
+	</array>
+</dict>
+</plist>

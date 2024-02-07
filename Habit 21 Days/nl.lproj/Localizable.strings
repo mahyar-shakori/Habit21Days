@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  Habit 21 Days
+
+  Created by Mahyar on 2/6/24.
+  
+*/
+
+"introFirstTitleLabel" = "Gezonde gewoonte";
+"introFirstDescriptionLabel" = "Er wordt geschat dat het 21 dagen duurt voordat mensen een nieuwe gewoonte aanleren. Introduceer een gezonde gewoonte in je leven met de 21 dagen-app.";
+"introSecondTitleLabel" = "Slechte gewoonte";
+"introSecondDescriptionLabel" = "Vergeet niet om voor je lichaam te zorgen. Je kunt een slechte gewoonte veranderen door deze te vervangen door een goede gewoonte, dat kan met deze 21 Dagen-app.";
+"skipButton" = "Overslaan";
+"nextButton" = "Volgende";
+"hiDialogLabel" = "Hoi, hoe moeten we je noemen?";
+"userNameTextFieldPplaceholder" = "Vul uw naam in";
+"continueButton" = "Doorgaan";
+"errorLabel" = "Kom op! Je kunt ons je naam vertellen :)";
+"welcomeLabel" = "Welkom, ";
+"firstHomeTitleLabel" = "Mijn gewoonten";
+"secondHomeTitleLabel" = "Gebruiken";
+"doneButton" = "Klaar";
+"addHabitTextFieldPlaceholder" = "Titel van gewoonte";
+"saveButton" = "Redden";
+"emptyViewLabel" = "Er is nog geen gewoonte toegevoegd! Klik op de menuknop om een gewoonte toe te voegen.";
+"dropDownTableViewFirstItem" = "Gewoonte toevoegen";
+"dropDownTableViewSecondItem" = "Gewoontes Bibliotheek";
+"dropDownTableViewThirdItem" = "Gewoontelijst bewerken";
+"dropDownTableViewFourthItem" = "Citaat uit";
+"dropDownTableViewFifthItem" = "Hernoemen";
+"addHabitTitleLabel" = "Gewoonte toevoegen";
+"cancelButton" = "Annuleren";
+"reminderLabel" = "Herinnering";
+"dateLabel" = "Kies een tijdstip";
+"addReminderButton" = "Klik om herinnering toe te voegen";
+"editHabitTitleLabel" = "Gewoonte bewerken";
+"missHabitToastLabel" = "Je gewoonte is opnieuw begonnen!";
+"missHabitButton" = "Ik heb het gemist! Opnieuw beginnen";
+"alertOkButton" = "OK";
+"alertEditButton" = "Bewerking";
+"alertDeleteButton" = "Verwijderen";
+"alertYesButton" = "Ja";
+"alertNoButton" = "Nee";
+"networkAlertTitle" = "Netwerkfout";
+"deleteHabitAlertTitle" = "Gewoonte verwijderen";
+"deleteHabitAlertMessage" = "Weet je zeker dat je deze gewoonte wilt verwijderen:";
+"habitListEmptyAlertTitle" = "Oeps, de gewoontelijst is leeg.";
+"notificationReminderMessage" = "Je probeert je levensstijl te verbeteren! Vergeet niet";
+"dateTextFieldEmptyTitle" = "Kies eerst een datum";
+"deleteReminderAlertTitle" = "Herinnering verwijderen";
+"deleteReminderAlertMessage" = "Weet je zeker dat je deze herinnering wilt verwijderen:";
+"daysCountLabel" = " dagen over";
+"notifAlertTitle" = "Notificaties aanzetten";
+"notifAlertMessage" = "Om deze functie te gebruiken, moet u meldingen inschakelen in de instellingen";
+"notifAlertButton" = "Instellingen";
