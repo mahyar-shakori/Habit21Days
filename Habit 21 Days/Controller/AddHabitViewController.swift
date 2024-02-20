@@ -12,7 +12,7 @@ final class AddHabitViewController: UIViewController, AlertDisplay {
     
     private let addHabitView = AddHabitView()
     private var datePickerManager: DatePickerManager?
-    private let addHabitTextFieldDelegate = TextFieldDelegate()
+    private let addHabitTextFieldDelegate = TextFieldDelegateHandler()
     private var realmManager = RealmManager()
     private var reminderList = [Reminder]()
     private var habit = Habit()

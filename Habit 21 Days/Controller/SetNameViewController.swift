@@ -10,7 +10,7 @@ import UIKit
 final class SetNameViewController: UIViewController {
     
     private let setNameView = SetNameView()
-    private let userNameTextFieldDelegate = TextFieldDelegate()
+    private let userNameTextFieldDelegate = TextFieldDelegateHandler()
     public static let screenSize = UIScreen.main.bounds.maxY
     weak var coordinator: MainCoordinator?
     

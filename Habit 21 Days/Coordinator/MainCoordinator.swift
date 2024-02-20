@@ -22,9 +22,9 @@ final class MainCoordinator: Coordinator {
     
     func start() {
         if UserDefaultsManager.shared.isLogin {
-            navigateToHomePage()
+            navigateToWelcomePage()
         } else {
-            navigateToHomePage()
+            navigateToIntroPage()
         }
     }
     

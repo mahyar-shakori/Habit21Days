@@ -10,7 +10,7 @@ import UIKit
 final class EditHabitViewController: UIViewController {
     
     private let editHabitView = EditHabitView()
-    private let editHabitTextFieldDelegate = TextFieldDelegate()
+    private let editHabitTextFieldDelegate = TextFieldDelegateHandler()
     private var realmManager = RealmManager()
     var habit: Habit?
     private var missHabitFlag = false
