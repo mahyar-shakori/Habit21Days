@@ -16,6 +16,4 @@ extension UIImage {
     static let loginImage = UIImage (named: "Login")
     static let emptyViewImage = UIImage (named: "EmptyViewImage")
     static let dropDownButtonImage = UIImage (named: "DropDownButton")
-    static let deleteIconImage = UIImage (systemName: "trash")
-    static let editIconImage = UIImage (systemName: "pencil")
 }

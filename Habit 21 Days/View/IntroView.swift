@@ -27,7 +27,7 @@ final class IntroView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = UIColor.systemBackground
+        backgroundColor = UIColor.appBackgroundColor
         
         setupIntroImageView()
         setupTitleLabel()
@@ -82,18 +82,16 @@ final class IntroView: UIView {
     }
     
     private func setupConstraints() {
-        introImageView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 50, left: 20, bottom: 0, right: 20), centerX: centerXAnchor, widthAnchorTo: introImageView.heightAnchor, heightAnchorTo: heightAnchor, widthMultiplier: 1.0, heightMultiplier: 1.0 / 2.0)
+        introImageView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 50, left: 20, right: 20), centerX: centerXAnchor, widthAnchorTo: introImageView.heightAnchor, heightAnchorTo: heightAnchor, widthMultiplier: 1.0, heightMultiplier: 1.0 / 2.0)
         
-        titleLabel.anchor(top: introImageView.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: -30, left: 30, bottom: 0, right: 0))
+        titleLabel.anchor(top: introImageView.bottomAnchor, leading: safeLeadingAnchor, padding: Padding(top: -30, left: 30))
         
-        descriptionLabel.anchor(top: titleLabel.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: trailingAnchor, padding: UIEdgeInsets(top: 10, left: 30, bottom: 0, right: 30))
+        descriptionLabel.anchor(top: titleLabel.bottomAnchor, leading: safeLeadingAnchor, trailing: trailingAnchor, padding: Padding(top: 10, left: 30, right: 30))
         
-        skipButton.anchor(top: nil, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: nil, padding: UIEdgeInsets(top: 0, left: 30, bottom: 50, right: 0))
+        skipButton.anchor(leading: safeLeadingAnchor, bottom: safeBottomAnchor, padding: Padding(left: 30, bottom: 50))
         
-        nextButton.anchor(top: nil, leading: nil, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 30), centerY: skipButton.centerYAnchor)
-        nextButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        nextButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        pageControlDot.anchor(top: nil, leading: nil, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), centerX: centerXAnchor, centerY: skipButton.centerYAnchor)
+        nextButton.anchor(trailing: safeTrailingAnchor, padding: Padding(right: 30), width: 80, height: 40, centerY: skipButton.centerYAnchor)
+
+        pageControlDot.anchor(centerX: centerXAnchor, centerY: skipButton.centerYAnchor)
     }
 }

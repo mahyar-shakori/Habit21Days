@@ -18,7 +18,7 @@ final class HabitView: UIView {
         super.init(frame: frame)
         setupViews()
         setupConstraints()
-        self.backgroundColor = UIColor.systemGray6
+        self.backgroundColor = UIColor.clear
     }
     
     required init?(coder: NSCoder) {
@@ -35,7 +35,7 @@ final class HabitView: UIView {
     }
     
     private func setupHabitCellView() {
-        habitCellView.backgroundColor = UIColor.systemBackground
+        habitCellView.backgroundColor = UIColor.appCellColor
         habitCellView.addCornerView(corner: 12.5)
         addSubview(habitCellView)
     }
@@ -55,26 +55,17 @@ final class HabitView: UIView {
     private func setupHabitDaysCountLabel() {
         habitDaysCountLabel.numberOfLines = 0
         habitDaysCountLabel.font = UIFont(name: UIFont.rooneySansRegular, size: 14)
+        habitDaysCountLabel.text = "21 days left"
         habitCellView.addSubview(habitDaysCountLabel)
     }
-    
-    private func setupHabitDaysCountCircularConstraints() {
-        habitDaysCountCircular.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            habitDaysCountCircular.leadingAnchor.constraint(equalTo: habitCellView.leadingAnchor, constant: 20),
-            habitDaysCountCircular.centerYAnchor.constraint(equalTo: habitCellView.centerYAnchor),
-            habitDaysCountCircular.heightAnchor.constraint(equalToConstant: 30),
-            habitDaysCountCircular.widthAnchor.constraint(equalTo: habitDaysCountCircular.heightAnchor)
-        ])
-    }
-    
+
     private func setupConstraints() {
-        habitCellView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20))
+        habitCellView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 5, left: 0, bottom: 5, right: 0))
         
-        setupHabitDaysCountCircularConstraints()
+        habitDaysCountCircular.anchor(leading: habitCellView.leadingAnchor, padding: Padding(left: 20), width: 30, height: 30, centerY: habitCellView.centerYAnchor)
+     
+        habitTitleLabel.anchor(leading: habitDaysCountCircular.trailingAnchor, trailing: safeTrailingAnchor, padding: Padding(left: 20, right: habitDaysCountLabel.width() + 20), centerY: habitCellView.centerYAnchor)
         
-        habitTitleLabel.anchor(top: nil, leading: habitDaysCountCircular.trailingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0), centerY: habitCellView.centerYAnchor)
-        
-        habitDaysCountLabel.anchor(top: nil, leading: nil, bottom: nil, trailing: habitCellView.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15), centerY: habitCellView.centerYAnchor)
+        habitDaysCountLabel.anchor(trailing: habitCellView.trailingAnchor, padding: Padding(right: 15), centerY: habitCellView.centerYAnchor)
     }
 }

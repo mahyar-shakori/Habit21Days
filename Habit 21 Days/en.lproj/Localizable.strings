@@ -37,8 +37,6 @@
 "missHabitToastLabel" = "Your habit started again!";
 "missHabitButton" = "Missed it! Start Again";
 "alertOkButton" = "OK";
-"alertEditButton" = "Edit";
-"alertDeleteButton" = "Delete";
 "alertYesButton" = "Yes";
 "alertNoButton" = "No";
 "networkAlertTitle" = "Network Error";

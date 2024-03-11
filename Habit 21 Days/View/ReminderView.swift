@@ -16,7 +16,7 @@ final class ReminderView: UIView {
         super.init(frame: frame)
         setupViews()
         setupConstraints()
-        self.backgroundColor = UIColor.systemGray6
+        self.backgroundColor = UIColor.appBackgroundColor
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +31,7 @@ final class ReminderView: UIView {
     }
     
     private func setupReminderCellView() {
-        reminderCellView.backgroundColor = UIColor.systemBackground
+        reminderCellView.backgroundColor = UIColor.appCellColor
         reminderCellView.addCornerView(corner: 10)
         addSubview(reminderCellView)
     }
@@ -43,9 +43,8 @@ final class ReminderView: UIView {
     }
     
     private func setupConstraints() {
-        reminderCellView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20))
-        reminderCellView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        reminderCellView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 5, left: 0, bottom: 5, right: 0), height: 50)
         
-        reminderLabel.anchor(top: nil, leading: reminderCellView.safeLeadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0), centerY: reminderCellView.centerYAnchor)
+        reminderLabel.anchor(leading: reminderCellView.safeLeadingAnchor, padding: Padding(left: 15), centerY: reminderCellView.centerYAnchor)
     }
 }

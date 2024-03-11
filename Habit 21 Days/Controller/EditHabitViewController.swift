@@ -29,15 +29,8 @@ final class EditHabitViewController: UIViewController {
     }
     
     private func addEditHabitView() {
-        editHabitView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(editHabitView)
-        
-        NSLayoutConstraint.activate([
-            editHabitView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            editHabitView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            editHabitView.topAnchor.constraint(equalTo: view.topAnchor),
-            editHabitView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        editHabitView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
     }
     
     private func updateEditHabitView() {

@@ -22,14 +22,8 @@ final class HabitTableViewCell: UITableViewCell {
     }
     
     private func addHabitView() {
-        habitView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            habitView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            habitView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            habitView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            habitView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
+        habitView.anchor(top: contentView.topAnchor, leading: contentView.leadingAnchor, bottom: contentView.bottomAnchor, trailing: contentView.trailingAnchor)
     }
     
     func config(_ habit: Habit) {

@@ -12,10 +12,8 @@ final class EditHabitView: UIView {
     private let editHabitTitleLabel = UILabel()
     let saveButton = UIButton()
     let cancelButton = UIButton()
-    private let firstSeparator = SeparatorLine()
     private let editHabitView = UIView()
     let editHabitTextField = UITextField()
-    private let secondSeparator = SeparatorLine()
     let missHabitToastLabel = UILabel()
     let missHabitButton = UIButton()
     var missHabitButtonTopConstraint: NSLayoutConstraint?
@@ -31,14 +29,13 @@ final class EditHabitView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = UIColor.systemGray6
+        backgroundColor = UIColor.appBackgroundColor
         
         setupEditHabitTitleLabel()
         setupSaveButton()
         setupCancelButton()
         setupEditHabitView()
         setupEditHabitTextField()
-        setupSeparators()
         setupMissHabitToastLabel()
         setupMissHabitButton()
     }
@@ -66,7 +63,8 @@ final class EditHabitView: UIView {
     }
     
     private func setupEditHabitView() {
-        editHabitView.backgroundColor = UIColor.systemBackground
+        editHabitView.backgroundColor = UIColor.appCellColor
+        editHabitView.addCornerView(corner: 12.5)
         addSubview(editHabitView)
     }
     
@@ -76,12 +74,7 @@ final class EditHabitView: UIView {
         editHabitTextField.font = UIFont(name: UIFont.rooneySansRegular, size: 17)
         editHabitView.addSubview(editHabitTextField)
     }
-    
-    private func setupSeparators() {
-        addSubview(firstSeparator)
-        addSubview(secondSeparator)
-    }
-    
+   
     private func setupMissHabitToastLabel() {
         missHabitToastLabel.text = NSLocalizedString("missHabitToastLabel", comment: "")
         missHabitToastLabel.font = UIFont(name: UIFont.rooneySansBold, size: 20)
@@ -103,24 +96,18 @@ final class EditHabitView: UIView {
     }
     
     private func setupConstraints() {
-        editHabitTitleLabel.anchor(top: safeTopAnchor, leading: nil, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0), centerX: centerXAnchor)
+        editHabitTitleLabel.anchor(top: safeTopAnchor, padding: Padding(top: 40), centerX: centerXAnchor)
         
-        saveButton.anchor(top: nil, leading: nil, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 30), centerY: editHabitTitleLabel.centerYAnchor)
+        saveButton.anchor(trailing: safeTrailingAnchor, padding: Padding(right: 30), centerY: editHabitTitleLabel.centerYAnchor)
         
-        cancelButton.anchor(top: nil, leading: safeLeadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0), centerY: editHabitTitleLabel.centerYAnchor)
+        cancelButton.anchor(leading: safeLeadingAnchor, padding: Padding(left: 30), centerY: editHabitTitleLabel.centerYAnchor)
         
-        firstSeparator.anchor(top: nil, leading: safeLeadingAnchor, bottom: editHabitView.topAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        editHabitView.anchor(top: editHabitTitleLabel.bottomAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 50, left: 20, right: 20), height: 50)
         
-        editHabitView.anchor(top: editHabitTitleLabel.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0))
-        editHabitView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        editHabitTextField.anchor(top: editHabitView.topAnchor, leading: editHabitView.leadingAnchor, bottom: editHabitView.bottomAnchor, trailing: editHabitView.trailingAnchor, padding: Padding(top: 0, left: 15, bottom: 0, right: 15))
         
-        editHabitTextField.anchor(top: editHabitView.topAnchor, leading: editHabitView.leadingAnchor, bottom: editHabitView.bottomAnchor, trailing: editHabitView.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15))
+        missHabitToastLabel.anchor(top: editHabitView.bottomAnchor, padding: Padding(top: 30), centerX: centerXAnchor)
         
-        secondSeparator.anchor(top: editHabitView.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-        
-        missHabitToastLabel.anchor(top: secondSeparator.bottomAnchor, leading: nil, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0), centerX: centerXAnchor)
-        
-        missHabitButtonTopConstraint = missHabitButton.anchor(top: secondSeparator.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0 , left: 30, bottom: 0, right: 30))
-        missHabitButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        missHabitButtonTopConstraint = missHabitButton.anchor(top: editHabitView.bottomAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 0 , left: 30, right: 30), height: 50)
     }
 }

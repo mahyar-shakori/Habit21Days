@@ -35,15 +35,8 @@ final class AddHabitViewController: UIViewController, AlertDisplay {
     }
     
     private func addAddHabitView() {
-        addHabitView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(addHabitView)
-        
-        NSLayoutConstraint.activate([
-            addHabitView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            addHabitView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            addHabitView.topAnchor.constraint(equalTo: view.topAnchor),
-            addHabitView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        addHabitView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
     }
     
     private func updateAddHabitView() {
@@ -195,7 +188,6 @@ final class AddHabitViewController: UIViewController, AlertDisplay {
         addHabitView.dateLabel.isHidden = false
         addHabitView.fifthSeparator.isHidden = false
         addHabitView.addReminderView.isHidden = false
-        addHabitView.sixthSeparatorTopConstraint?.constant = 100
         checkNotificationAuthorization()
     }
     
@@ -208,7 +200,6 @@ final class AddHabitViewController: UIViewController, AlertDisplay {
         addHabitView.dateTextField.text = ""
         addHabitView.fifthSeparator.isHidden = true
         addHabitView.addReminderView.isHidden = true
-        addHabitView.sixthSeparatorTopConstraint?.constant = 0
         reminderList.removeAll()
         addHabitView.reminderTableView.reloadData()
     }
@@ -261,7 +252,12 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
                 actionPerformed(false)
             })
         }
-        deleteAction.image = UIImage.deleteIconImage
+        
+        let deleteIcon = UIImage.addBackgroundCircle(withSymbol: "trash", color: .red, diameter: 35, tintColor: .white)
+            deleteAction.image = deleteIcon
+        deleteAction.image = deleteIcon
+        deleteAction.backgroundColor = UIColor.appBackgroundColor
+        
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }

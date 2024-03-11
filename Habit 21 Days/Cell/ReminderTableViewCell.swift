@@ -22,14 +22,7 @@ final class ReminderTableViewCell: UITableViewCell {
     }
     
     private func addReminderView() {
-        reminderView.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            reminderView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            reminderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            reminderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            reminderView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
+        reminderView.anchor(top: contentView.topAnchor, leading: contentView.leadingAnchor, bottom: contentView.bottomAnchor, trailing: contentView.trailingAnchor)
     }
 
     func config(_ reminder: Reminder) {

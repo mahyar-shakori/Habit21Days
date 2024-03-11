@@ -21,15 +21,8 @@ final class HabitLibraryTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func addHabitLibraryView() {
-        habitLibraryView.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            habitLibraryView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            habitLibraryView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            habitLibraryView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            habitLibraryView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
+    private func addHabitLibraryView() {        
+        habitLibraryView.anchor(top: contentView.topAnchor, leading: contentView.leadingAnchor, bottom: contentView.bottomAnchor, trailing: contentView.trailingAnchor)
     }
     
     func config(_ habitLibrary: HabitLibrary) {

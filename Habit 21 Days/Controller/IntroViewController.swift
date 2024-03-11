@@ -21,15 +21,8 @@ final class IntroViewController: UIViewController {
     }
     
     private func addSetNameView() {
-        introView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(introView)
-        
-        NSLayoutConstraint.activate([
-            introView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            introView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            introView.topAnchor.constraint(equalTo: view.topAnchor),
-            introView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        introView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
     }
     
     private func skipButtonTappedSetup() {

@@ -25,15 +25,8 @@ final class SetNameViewController: UIViewController {
     }
     
     private func addSetNameView() {
-        setNameView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(setNameView)
-        
-        NSLayoutConstraint.activate([
-            setNameView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            setNameView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            setNameView.topAnchor.constraint(equalTo: view.topAnchor),
-            setNameView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        setNameView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
     }
     
     private func updateNameView() {

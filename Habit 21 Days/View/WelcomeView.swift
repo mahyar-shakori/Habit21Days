@@ -24,7 +24,7 @@ final class WelcomeView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = UIColor.systemBackground
+        backgroundColor = UIColor.appBackgroundColor
         
         setupLogoImageView()
         setupNameLabel()
@@ -51,10 +51,10 @@ final class WelcomeView: UIView {
     }
     
     private func setupConstraints() {
-        loginImageView.anchor(top: safeTopAnchor, leading: nil, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 180, left: 0, bottom: 0, right: 0), centerX: centerXAnchor, widthAnchorTo: loginImageView.heightAnchor, heightAnchorTo: heightAnchor, widthMultiplier: 1.0, heightMultiplier: 1.0 / 5.0)
+        loginImageView.anchor(top: safeTopAnchor, padding: Padding(top: 180), centerX: centerXAnchor, widthAnchorTo: loginImageView.heightAnchor, heightAnchorTo: heightAnchor, widthMultiplier: 1.0, heightMultiplier: 1.0 / 5.0)
         
-        nameLabel.anchor(top: nil, leading: nil, bottom: activityIndicator.topAnchor, trailing: nil, padding: UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0), centerX: centerXAnchor)
+        nameLabel.anchor(bottom: activityIndicator.topAnchor, padding: Padding(bottom: 40), centerX: centerXAnchor)
         
-        activityIndicator.anchor(top: nil, leading: nil, bottom: safeBottomAnchor, trailing: nil, padding: UIEdgeInsets(top: 0, left: 0, bottom: 60, right: 0), centerX: centerXAnchor)
+        activityIndicator.anchor(bottom: safeBottomAnchor, padding: Padding(bottom: 60), centerX: centerXAnchor)
     }
 }

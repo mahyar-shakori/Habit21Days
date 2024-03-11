@@ -35,7 +35,7 @@ final class HomeView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = UIColor.systemGray6
+        backgroundColor = UIColor.appBackgroundColor
         
         setupHomeTitleButton()
         setupQuoteLabel()
@@ -142,29 +142,28 @@ final class HomeView: UIView {
     }
     
     private func setupConstraints() {
-        homeTitleLabel.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 40, left: 30, bottom: 0, right: 0))
+        homeTitleLabel.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, padding: Padding(top: 40, left: 30))
         
-        quoteLabel.anchor(top: homeTitleLabel.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 25, left: 30, bottom: 0, right: 30))
+        quoteLabel.anchor(top: homeTitleLabel.bottomAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 25, left: 30, right: 30))
         
-        dropDownButton.anchor(top: nil, leading: nil, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 30), centerY: homeTitleLabel.centerYAnchor)
+        dropDownButton.anchor(trailing: safeTrailingAnchor, padding: Padding(right: 30), centerY: homeTitleLabel.centerYAnchor)
         
-        doneButton.anchor(top: nil, leading: nil, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 30), centerY: homeTitleLabel.centerYAnchor)
+        doneButton.anchor(trailing: safeTrailingAnchor, padding: Padding(right: 30), centerY: homeTitleLabel.centerYAnchor)
         
-        habitTableView.anchor(top: quoteLabel.bottomAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0))
+        habitTableView.anchor(top: quoteLabel.bottomAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 15, left: 20, bottom: 0, right: 20))
         
-        addHabitView.anchor(top: quoteLabel.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 80))
-        addHabitView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        addHabitView.anchor(top: quoteLabel.bottomAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 0, left: 20, right: 80), height: 40)
         
-        addHabitTextField.anchor(top: addHabitView.topAnchor, leading: addHabitView.leadingAnchor, bottom: addHabitView.bottomAnchor, trailing: addHabitView.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
+        addHabitTextField.anchor(top: addHabitView.topAnchor, leading: addHabitView.leadingAnchor, bottom: addHabitView.bottomAnchor, trailing: addHabitView.trailingAnchor, padding: Padding(top: 0, left: 10, bottom: 0, right: 10))
         
-        saveButton.anchor(top: nil, leading: nil, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 25), centerY: addHabitTextField.centerYAnchor)
+        saveButton.anchor(trailing: safeTrailingAnchor, padding: Padding(right: 25), centerY: addHabitTextField.centerYAnchor)
         
-        habitLibraryTableView.anchor(top: addHabitTextField.bottomAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0))
+        habitLibraryTableView.anchor(top: addHabitTextField.bottomAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 15, left: 20, bottom: 0, right: 20))
         
-        emptyView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        emptyView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 0, left: 0, bottom: 0, right: 0))
         
-        emptyViewImage.anchor(top: emptyView.topAnchor, leading: emptyView.leadingAnchor, bottom: nil, trailing: emptyView.trailingAnchor, padding: UIEdgeInsets(top: 140, left: 70, bottom: 0, right: 70), centerX: centerXAnchor, widthAnchorTo: emptyViewImage.heightAnchor, heightAnchorTo: heightAnchor, widthMultiplier: 1.0, heightMultiplier: 1.0 / 2.5)
+        emptyViewImage.anchor(top: emptyView.topAnchor, leading: emptyView.leadingAnchor, trailing: emptyView.trailingAnchor, padding: Padding(top: 140, left: 70, right: 70), centerX: centerXAnchor, widthAnchorTo: emptyViewImage.heightAnchor, heightAnchorTo: heightAnchor, widthMultiplier: 1.0, heightMultiplier: 1.0 / 2.5)
         
-        emptyViewLabel.anchor(top: emptyViewImage.bottomAnchor, leading: emptyView.leadingAnchor, bottom: nil, trailing: emptyView.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30))
+        emptyViewLabel.anchor(top: emptyViewImage.bottomAnchor, leading: emptyView.leadingAnchor, trailing: emptyView.trailingAnchor, padding: Padding(top: 0, left: 30, right: 30))
     }
 }

@@ -22,15 +22,8 @@ final class WelcomeViewController: UIViewController {
     }
     
     private func addWelcomeView() {
-        welcomeView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(welcomeView)
-        
-        NSLayoutConstraint.activate([
-            welcomeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            welcomeView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            welcomeView.topAnchor.constraint(equalTo: view.topAnchor),
-            welcomeView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        welcomeView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
     }
     
     private func updateWelcomeView() {

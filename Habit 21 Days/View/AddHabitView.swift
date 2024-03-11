@@ -12,12 +12,9 @@ final class AddHabitView: UIView {
     private let addHabitTitleLabel = UILabel()
     let saveButton = UIButton()
     let cancelButton = UIButton()
-    private let firstSeparator = SeparatorLine()
     private let addHabitView = UIView()
     let addHabitTextField = UITextField()
-    private let secondSeparator = SeparatorLine()
     private let stackView = UIStackView()
-    private let thirdSeparator = SeparatorLine()
     private let reminderView = UIView()
     private let reminderLabel = UILabel()
     let reminderSwitch = UISwitch()
@@ -28,9 +25,7 @@ final class AddHabitView: UIView {
     let fifthSeparator = SeparatorLine()
     let addReminderView = UIView()
     let addReminderButton = UIButton()
-    private let sixthSeparator = SeparatorLine()
     let reminderTableView = UITableView()
-    var sixthSeparatorTopConstraint: NSLayoutConstraint?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,13 +38,14 @@ final class AddHabitView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = UIColor.systemGray6
+        backgroundColor = UIColor.appBackgroundColor
         
         setupAddHabitTitleLabel()
         setupSaveButton()
         setupCancelButton()
         setupAddHabitView()
         setupAddHabitTextField()
+        setupStackView()
         setupReminderView()
         setupReminderLabel()
         setupReminderSwitch()
@@ -84,7 +80,8 @@ final class AddHabitView: UIView {
     }
     
     private func setupAddHabitView() {
-        addHabitView.backgroundColor = UIColor.systemBackground
+        addHabitView.backgroundColor = UIColor.appCellColor
+        addHabitView.addCornerView(corner: 12.5)
         addSubview(addHabitView)
     }
     
@@ -96,9 +93,23 @@ final class AddHabitView: UIView {
         addHabitView.addSubview(addHabitTextField)
     }
     
+    private func setupStackView() {
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.alignment = .fill
+        stackView.spacing = 8
+        stackView.addCornerView(corner: 12.5)
+        stackView.addArrangedSubview(reminderView)
+        stackView.addArrangedSubview(fourthSeparator)
+        stackView.addArrangedSubview(dateView)
+        stackView.addArrangedSubview(fifthSeparator)
+        stackView.addArrangedSubview(addReminderView)
+        addSubview(stackView)
+    }
+    
     private func setupReminderView() {
-        reminderView.backgroundColor = UIColor.systemBackground
-        addSubview(reminderView)
+        reminderView.backgroundColor = UIColor.appCellColor
+        stackView.addSubview(reminderView)
     }
     
     private func setupReminderLabel() {
@@ -112,8 +123,8 @@ final class AddHabitView: UIView {
     }
     
     private func setupDateView() {
-        dateView.backgroundColor = UIColor.systemBackground
-        addSubview(dateView)
+        dateView.backgroundColor = UIColor.appCellColor
+        stackView.addSubview(dateView)
     }
     
     private func setupDateLabel() {
@@ -129,8 +140,8 @@ final class AddHabitView: UIView {
     }
     
     private func setupAddReminderView() {
-        addReminderView.backgroundColor = UIColor.systemBackground
-        addSubview(addReminderView)
+        addReminderView.backgroundColor = UIColor.appCellColor
+        stackView.addSubview(addReminderView)
     }
     
     private func setupAddReminderButton() {
@@ -141,12 +152,8 @@ final class AddHabitView: UIView {
     }
     
     private func setupSeparators() {
-        addSubview(firstSeparator)
-        addSubview(secondSeparator)
-        addSubview(thirdSeparator)
         addSubview(fourthSeparator)
         addSubview(fifthSeparator)
-        addSubview(sixthSeparator)
     }
     
     private func setupReminderTableView() {
@@ -156,48 +163,38 @@ final class AddHabitView: UIView {
     }
     
     private func setupConstraints() {
-        addHabitTitleLabel.anchor(top: safeTopAnchor, leading: nil, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0), centerX: centerXAnchor)
+        addHabitTitleLabel.anchor(top: safeTopAnchor, padding: Padding(top: 40), centerX: centerXAnchor)
         
-        saveButton.anchor(top: nil, leading: nil, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 30), centerY: addHabitTitleLabel.centerYAnchor)
+        saveButton.anchor(trailing: safeTrailingAnchor, padding: Padding(right: 30), centerY: addHabitTitleLabel.centerYAnchor)
         
-        cancelButton.anchor(top: nil, leading: safeLeadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0), centerY: addHabitTitleLabel.centerYAnchor)
+        cancelButton.anchor(leading: safeLeadingAnchor, padding: Padding(left: 30), centerY: addHabitTitleLabel.centerYAnchor)
+                
+        addHabitView.anchor(top: addHabitTitleLabel.bottomAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 50, left: 20, right: 20), height: 50)
         
-        firstSeparator.anchor(top: nil, leading: safeLeadingAnchor, bottom: addHabitView.topAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        addHabitTextField.anchor(top: addHabitView.topAnchor, leading: addHabitView.leadingAnchor, bottom: addHabitView.bottomAnchor, trailing: addHabitView.trailingAnchor, padding: Padding(top: 0, left: 15, bottom: 0, right: 15))
+                
+        stackView.anchor(leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(left: 20, right: 20))
+                
+        reminderView.anchor(top: addHabitView.bottomAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 25, left: 20, right: 20), height: 50)
         
-        addHabitView.anchor(top: addHabitTitleLabel.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0))
-        addHabitView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        reminderLabel.anchor(leading: reminderView.leadingAnchor, padding: Padding(left: 15), centerY: reminderView.centerYAnchor)
         
-        addHabitTextField.anchor(top: addHabitView.topAnchor, leading: addHabitView.leadingAnchor, bottom: addHabitView.bottomAnchor, trailing: addHabitView.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15))
+        reminderSwitch.anchor(trailing: reminderView.trailingAnchor, padding: Padding(right: 15), centerY: reminderView.centerYAnchor)
         
-        secondSeparator.anchor(top: addHabitView.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        fourthSeparator.anchor(leading: safeLeadingAnchor, bottom: reminderView.bottomAnchor, trailing: safeTrailingAnchor, padding: Padding(left: 35, bottom: 0, right: 20))
         
-        thirdSeparator.anchor(top: nil, leading: safeLeadingAnchor, bottom: reminderView.topAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        dateView.anchor(top: fourthSeparator.bottomAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 0, left: 20, right: 20), height: 50)
         
-        reminderView.anchor(top: addHabitView.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0))
-        reminderView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        dateLabel.anchor(leading: dateView.leadingAnchor, padding: Padding(left: 15), centerY: dateView.centerYAnchor)
         
-        reminderLabel.anchor(top: nil, leading: reminderView.leadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0), centerY: reminderView.centerYAnchor)
+        dateTextField.anchor(leading: dateView.leadingAnchor, trailing: dateView.trailingAnchor, padding: Padding(left: 15, right: 15), centerY: dateView.centerYAnchor)
         
-        reminderSwitch.anchor(top: nil, leading: nil, bottom: nil, trailing: reminderView.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15), centerY: reminderView.centerYAnchor)
+        fifthSeparator.anchor(leading: safeLeadingAnchor, bottom: dateView.bottomAnchor, trailing: safeTrailingAnchor, padding: Padding(left: 35, bottom: 0, right: 20))
         
-        fourthSeparator.anchor(top: nil, leading: safeLeadingAnchor, bottom: reminderView.bottomAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0))
+        addReminderView.anchor(top: fifthSeparator.bottomAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 0, left: 20, right: 20), height: 50)
         
-        dateView.anchor(top: fourthSeparator.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-        dateView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        dateLabel.anchor(top: nil, leading: dateView.leadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0), centerY: dateView.centerYAnchor)
-        
-        dateTextField.anchor(top: nil, leading: dateView.leadingAnchor, bottom: nil, trailing: dateView.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), centerY: dateView.centerYAnchor)
-        
-        fifthSeparator.anchor(top: nil, leading: safeLeadingAnchor, bottom: dateView.bottomAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0))
-        
-        addReminderView.anchor(top: fifthSeparator.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-        addReminderView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        addReminderButton.anchor(top: nil, leading: nil, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0), centerX: addReminderView.centerXAnchor, centerY: addReminderView.centerYAnchor)
-        
-        sixthSeparatorTopConstraint = sixthSeparator.anchor(top: reminderView.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-        
-        reminderTableView.anchor(top: sixthSeparator.bottomAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
+        addReminderButton.anchor(centerX: addReminderView.centerXAnchor, centerY: addReminderView.centerYAnchor)
+                
+        reminderTableView.anchor(top: addReminderView.bottomAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 20, left: 20, bottom: 0, right: 20))
     }
 }

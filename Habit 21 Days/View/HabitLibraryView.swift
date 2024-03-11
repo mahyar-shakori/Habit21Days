@@ -16,7 +16,7 @@ final class HabitLibraryView: UIView {
         super.init(frame: frame)
         setupViews()
         setupConstraints()
-        self.backgroundColor = UIColor.systemGray6
+        self.backgroundColor = UIColor.clear
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +31,7 @@ final class HabitLibraryView: UIView {
     }
     
     private func setupHabitCellView() {
-        habitCellView.backgroundColor = UIColor.systemBackground
+        habitCellView.backgroundColor = UIColor.appCellColor
         habitCellView.addCornerView(corner: 12.5)
         addSubview(habitCellView)
     }
@@ -43,8 +43,8 @@ final class HabitLibraryView: UIView {
     }
     
     private func setupConstraints() {
-        habitCellView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20))
+        habitCellView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: safeBottomAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 5, left: 0, bottom: 5, right: 0))
                 
-        habitTitleLabel.anchor(top: nil, leading: habitCellView.leadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0), centerY: habitCellView.centerYAnchor)
+        habitTitleLabel.anchor(leading: habitCellView.leadingAnchor, padding: Padding(left: 15), centerY: habitCellView.centerYAnchor)
     }
 }

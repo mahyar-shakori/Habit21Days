@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BD2731B7188263FBB2172B1 /* Pods_Habit_21_Days_Habit_21_DaysUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A08E5672FDF023FAF16ACA /* Pods_Habit_21_Days_Habit_21_DaysUITests.framework */; };
 		2C4A9AE70F5A609E59087592 /* Pods_Habit_21_DaysTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836168BAAF2DE1BDD5C7E622 /* Pods_Habit_21_DaysTests.framework */; };
 		46A2A4640525AF965CAEF599 /* Pods_Habit_21_Days.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB13F1A24DAFA3054D76C3E /* Pods_Habit_21_Days.framework */; };
 		4A02DFC62B4E8F2500B3DCFF /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A02DFC52B4E8F2500B3DCFF /* HabitTableViewCell.swift */; };
@@ -33,8 +32,10 @@
 		4A652DAE2B739BF700F02C6C /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A652DAD2B739BF700F02C6C /* TextFieldDelegate.swift */; };
 		4A7893252B60DEFE00D6332A /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7893242B60DEFE00D6332A /* EditHabitViewController.swift */; };
 		4A7893272B60DF2F00D6332A /* EditHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7893262B60DF2F00D6332A /* EditHabitView.swift */; };
+		4A833D802B8DAEF100FBFA14 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A833D7F2B8DAEF100FBFA14 /* StringExtensionTests.swift */; };
 		4A96A2FE2B53C4A7002E9CA9 /* SeparatorLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96A2FD2B53C4A7002E9CA9 /* SeparatorLineView.swift */; };
 		4A96A3002B53DED9002E9CA9 /* DatePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A96A2FF2B53DED9002E9CA9 /* DatePickerManager.swift */; };
+		4A9EF2342B8F515E00CD77BB /* BackgroundCircleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9EF2332B8F515E00CD77BB /* BackgroundCircleExtension.swift */; };
 		4AD1F07B2B6F8A6800C4B54C /* HabitLibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD1F07A2B6F8A6800C4B54C /* HabitLibraryTableViewCell.swift */; };
 		4AD1F07D2B6F8A6D00C4B54C /* HabitLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD1F07C2B6F8A6D00C4B54C /* HabitLibrary.swift */; };
 		4AD1F07F2B6F8A7300C4B54C /* HabitLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD1F07E2B6F8A7300C4B54C /* HabitLibraryView.swift */; };
@@ -44,8 +45,6 @@
 		4AD61A8A2B4ADFF90076A855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD61A892B4ADFF90076A855 /* Assets.xcassets */; };
 		4AD61A8D2B4ADFF90076A855 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AD61A8B2B4ADFF90076A855 /* LaunchScreen.storyboard */; };
 		4AD61A982B4ADFF90076A855 /* Habit_21_DaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61A972B4ADFF90076A855 /* Habit_21_DaysTests.swift */; };
-		4AD61AA22B4ADFF90076A855 /* Habit_21_DaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61AA12B4ADFF90076A855 /* Habit_21_DaysUITests.swift */; };
-		4AD61AA42B4ADFF90076A855 /* Habit_21_DaysUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61AA32B4ADFF90076A855 /* Habit_21_DaysUITestsLaunchTests.swift */; };
 		4AD61AB32B4AE04F0076A855 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61AB22B4AE04F0076A855 /* NetworkAPI.swift */; };
 		4AD61AB52B4AE0680076A855 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61AB42B4AE0680076A855 /* UserDefaultsManager.swift */; };
 		4AD61AB82B4AE0A40076A855 /* ConstraintsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61AB72B4AE0A40076A855 /* ConstraintsExtension.swift */; };
@@ -100,13 +99,6 @@
 			remoteGlobalIDString = 4AD61A7C2B4ADFF80076A855;
 			remoteInfo = "Habit 21 Days";
 		};
-		4AD61A9E2B4ADFF90076A855 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4AD61A752B4ADFF80076A855 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4AD61A7C2B4ADFF80076A855;
-			remoteInfo = "Habit 21 Days";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -139,8 +131,10 @@
 		4A652DAD2B739BF700F02C6C /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 		4A7893242B60DEFE00D6332A /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
 		4A7893262B60DF2F00D6332A /* EditHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitView.swift; sourceTree = "<group>"; };
+		4A833D7F2B8DAEF100FBFA14 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		4A96A2FD2B53C4A7002E9CA9 /* SeparatorLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLineView.swift; sourceTree = "<group>"; };
 		4A96A2FF2B53DED9002E9CA9 /* DatePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerManager.swift; sourceTree = "<group>"; };
+		4A9EF2332B8F515E00CD77BB /* BackgroundCircleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCircleExtension.swift; sourceTree = "<group>"; };
 		4AD1F07A2B6F8A6800C4B54C /* HabitLibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitLibraryTableViewCell.swift; sourceTree = "<group>"; };
 		4AD1F07C2B6F8A6D00C4B54C /* HabitLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitLibrary.swift; sourceTree = "<group>"; };
 		4AD1F07E2B6F8A7300C4B54C /* HabitLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitLibraryView.swift; sourceTree = "<group>"; };
@@ -153,7 +147,6 @@
 		4AD61A8E2B4ADFF90076A855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AD61A932B4ADFF90076A855 /* Habit 21 DaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Habit 21 DaysTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD61A972B4ADFF90076A855 /* Habit_21_DaysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit_21_DaysTests.swift; sourceTree = "<group>"; };
-		4AD61A9D2B4ADFF90076A855 /* Habit 21 DaysUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Habit 21 DaysUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD61AA12B4ADFF90076A855 /* Habit_21_DaysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit_21_DaysUITests.swift; sourceTree = "<group>"; };
 		4AD61AA32B4ADFF90076A855 /* Habit_21_DaysUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit_21_DaysUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4AD61AB22B4AE04F0076A855 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
@@ -224,14 +217,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4AD61A9A2B4ADFF90076A855 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0BD2731B7188263FBB2172B1 /* Pods_Habit_21_Days_Habit_21_DaysUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -284,7 +269,6 @@
 			children = (
 				4AD61A7D2B4ADFF80076A855 /* Habit 21 Days.app */,
 				4AD61A932B4ADFF90076A855 /* Habit 21 DaysTests.xctest */,
-				4AD61A9D2B4ADFF90076A855 /* Habit 21 DaysUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				4AD61A972B4ADFF90076A855 /* Habit_21_DaysTests.swift */,
+				4A833D7F2B8DAEF100FBFA14 /* StringExtensionTests.swift */,
 			);
 			path = "Habit 21 DaysTests";
 			sourceTree = "<group>";
@@ -370,6 +355,7 @@
 				4AD32B6A2B58099E0033F04A /* HighlightedColorExtension.swift */,
 				4AE677E62B591DA8009D67C6 /* ChangeImageColorExtension.swift */,
 				4A2D3D332B66422A0047E03B /* StringToDateExtension.swift */,
+				4A9EF2332B8F515E00CD77BB /* BackgroundCircleExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -511,26 +497,6 @@
 			productReference = 4AD61A932B4ADFF90076A855 /* Habit 21 DaysTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4AD61A9C2B4ADFF90076A855 /* Habit 21 DaysUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4AD61AAD2B4ADFF90076A855 /* Build configuration list for PBXNativeTarget "Habit 21 DaysUITests" */;
-			buildPhases = (
-				0BF5AE39C83B65FBC96EB2E6 /* [CP] Check Pods Manifest.lock */,
-				4AD61A992B4ADFF90076A855 /* Sources */,
-				4AD61A9A2B4ADFF90076A855 /* Frameworks */,
-				4AD61A9B2B4ADFF90076A855 /* Resources */,
-				A09A305CA9A417848B552D41 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4AD61A9F2B4ADFF90076A855 /* PBXTargetDependency */,
-			);
-			name = "Habit 21 DaysUITests";
-			productName = "Habit 21 DaysUITests";
-			productReference = 4AD61A9D2B4ADFF90076A855 /* Habit 21 DaysUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -545,10 +511,6 @@
 						CreatedOnToolsVersion = 15.1;
 					};
 					4AD61A922B4ADFF90076A855 = {
-						CreatedOnToolsVersion = 15.1;
-						TestTargetID = 4AD61A7C2B4ADFF80076A855;
-					};
-					4AD61A9C2B4ADFF90076A855 = {
 						CreatedOnToolsVersion = 15.1;
 						TestTargetID = 4AD61A7C2B4ADFF80076A855;
 					};
@@ -570,7 +532,6 @@
 			targets = (
 				4AD61A7C2B4ADFF80076A855 /* Habit 21 Days */,
 				4AD61A922B4ADFF90076A855 /* Habit 21 DaysTests */,
-				4AD61A9C2B4ADFF90076A855 /* Habit 21 DaysUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -605,38 +566,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4AD61A9B2B4ADFF90076A855 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0BF5AE39C83B65FBC96EB2E6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Habit 21 Days-Habit 21 DaysUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3189E7D33685F0AEEA647A72 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -674,23 +606,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A09A305CA9A417848B552D41 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Habit 21 Days-Habit 21 DaysUITests/Pods-Habit 21 Days-Habit 21 DaysUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Habit 21 Days-Habit 21 DaysUITests/Pods-Habit 21 Days-Habit 21 DaysUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Habit 21 Days-Habit 21 DaysUITests/Pods-Habit 21 Days-Habit 21 DaysUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F8798B757D85F56195BA5344 /* [CP] Check Pods Manifest.lock */ = {
@@ -744,6 +659,7 @@
 				4AD61AEA2B4BC4910076A855 /* HomeViewController.swift in Sources */,
 				4A02DFC62B4E8F2500B3DCFF /* HabitTableViewCell.swift in Sources */,
 				4AD61AF22B4BD0B20076A855 /* SetNameView.swift in Sources */,
+				4A9EF2342B8F515E00CD77BB /* BackgroundCircleExtension.swift in Sources */,
 				4AD61B092B4D26240076A855 /* ReminderTableViewCell.swift in Sources */,
 				4AD61AC02B4AE1370076A855 /* WelcomeView.swift in Sources */,
 				4AD61AFE2B4C1A920076A855 /* DismissKeyboardExtension.swift in Sources */,
@@ -792,15 +708,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AD61A982B4ADFF90076A855 /* Habit_21_DaysTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AD61A992B4ADFF90076A855 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AD61AA22B4ADFF90076A855 /* Habit_21_DaysUITests.swift in Sources */,
-				4AD61AA42B4ADFF90076A855 /* Habit_21_DaysUITestsLaunchTests.swift in Sources */,
+				4A833D802B8DAEF100FBFA14 /* StringExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,11 +719,6 @@
 			isa = PBXTargetDependency;
 			target = 4AD61A7C2B4ADFF80076A855 /* Habit 21 Days */;
 			targetProxy = 4AD61A942B4ADFF90076A855 /* PBXContainerItemProxy */;
-		};
-		4AD61A9F2B4ADFF90076A855 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4AD61A7C2B4ADFF80076A855 /* Habit 21 Days */;
-			targetProxy = 4AD61A9E2B4ADFF90076A855 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -894,7 +797,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -952,7 +855,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -968,6 +871,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Q4H9SV5Z6;
@@ -977,8 +881,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -993,7 +897,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1003,6 +907,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Q4H9SV5Z6;
@@ -1012,8 +917,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1028,7 +933,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1042,13 +947,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5Z9KLU67PG;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Habit-21-DaysTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habit 21 Days.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Habit 21 Days";
 			};
 			name = Debug;
@@ -1063,52 +972,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5Z9KLU67PG;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Habit-21-DaysTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habit 21 Days.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Habit 21 Days";
-			};
-			name = Release;
-		};
-		4AD61AAE2B4ADFF90076A855 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A7E490F91C0BA7CED2C4885 /* Pods-Habit 21 Days-Habit 21 DaysUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5Z9KLU67PG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Habit-21-DaysUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Habit 21 Days";
-			};
-			name = Debug;
-		};
-		4AD61AAF2B4ADFF90076A855 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00323FD51C162A01E29C1A3C /* Pods-Habit 21 Days-Habit 21 DaysUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5Z9KLU67PG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Habit-21-DaysUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Habit 21 Days";
 			};
 			name = Release;
 		};
@@ -1138,15 +1013,6 @@
 			buildConfigurations = (
 				4AD61AAB2B4ADFF90076A855 /* Debug */,
 				4AD61AAC2B4ADFF90076A855 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4AD61AAD2B4ADFF90076A855 /* Build configuration list for PBXNativeTarget "Habit 21 DaysUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4AD61AAE2B4ADFF90076A855 /* Debug */,
-				4AD61AAF2B4ADFF90076A855 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

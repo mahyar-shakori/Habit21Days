@@ -49,15 +49,8 @@ final class HomeViewController: UIViewController, AlertDisplay {
     }
     
     private func addHomeView() {
-        homeView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(homeView)
-        
-        NSLayoutConstraint.activate([
-            homeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            homeView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            homeView.topAnchor.constraint(equalTo: view.topAnchor),
-            homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        homeView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
     }
     
     private func updateHomeView() {
@@ -337,20 +330,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         if tableView == homeView.habitTableView {
             let selectedHabit = habitList[indexPath.row]
-            
-            let editAction = UIContextualAction(style: .normal, title: NSLocalizedString("alertEditButton", comment: "")) { [weak self] (action, view, actionPerformed) in
+            let editAction = UIContextualAction(style: .normal, title: nil) { [weak self] (action, view, actionPerformed) in
                 guard let self = self else { return }
             
                 coordinator?.navigateToEditHabitPage(withHabit: selectedHabit)
                 
                 actionPerformed(true)
             }
-            editAction.backgroundColor = UIColor.blue
-            editAction.image = UIImage.editIconImage
+
+            let editIcon = UIImage.addBackgroundCircle(withSymbol: "pencil", color: .blue, diameter: 50, tintColor: .white)
+            editAction.image = editIcon
+            editAction.backgroundColor = .appBackgroundColor
             
-            let deleteAction = UIContextualAction(style: .destructive , title:  NSLocalizedString("alertDeleteButton", comment: "")) { (contextualAction, view, actionPerformed: @escaping (Bool) -> ()) in
+            let deleteAction = UIContextualAction(style: .destructive , title: nil) { (contextualAction, view, actionPerformed: @escaping (Bool) -> ()) in
                 
                 self.showAlert(title: NSLocalizedString("deleteHabitAlertTitle", comment: ""), message: NSLocalizedString("deleteHabitAlertMessage", comment: "") + selectedHabit.title + "?", primaryButtonTitle: NSLocalizedString("alertYesButton", comment: ""), primaryButtonStyle: .destructive,primaryAction: {
                     let habitToDelete = self.habitList[indexPath.row]
@@ -363,9 +358,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                         actionPerformed(false)
                     })
             }
-            deleteAction.image = UIImage.deleteIconImage
+
+            let deleteIcon = UIImage.addBackgroundCircle(withSymbol: "trash", color: .red, diameter: 50, tintColor: .white)
+            deleteAction.image = deleteIcon
+            deleteAction.backgroundColor = UIColor.appBackgroundColor
             
-            return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+            let config = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+                config.performsFirstActionWithFullSwipe = false
+            return config
         } else {
             let selectedHabit = habitLibraryList[indexPath.row]
             let deleteAction = UIContextualAction(style: .destructive, title:  "") { (contextualAction, view, actionPerformed: @escaping (Bool) -> ()) in
@@ -379,7 +379,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     actionPerformed(false)
                 })
             }
-            deleteAction.image = UIImage.deleteIconImage
+
+            let deleteIcon = UIImage.addBackgroundCircle(withSymbol: "trash", color: .red, diameter: 35, tintColor: .white)
+            deleteAction.image = deleteIcon
+            deleteAction.backgroundColor = UIColor.appBackgroundColor
+            
             return UISwipeActionsConfiguration(actions: [deleteAction])
         }
     }

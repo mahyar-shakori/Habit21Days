@@ -29,7 +29,7 @@ final class SetNameView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = UIColor.systemBackground
+        backgroundColor = UIColor.appBackgroundColor
         
         setupSetNameImageView()
         setupHiDialogLabel()
@@ -89,18 +89,16 @@ final class SetNameView: UIView {
     }
     
     private func setupConstraints() {
-        setNameImageView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0), centerX: centerXAnchor, widthAnchorTo: setNameImageView.heightAnchor, heightAnchorTo: heightAnchor, widthMultiplier: 1.0, heightMultiplier: 1.0 / 2.5)
+        setNameImageView.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 20, left: 0, right: 0), centerX: centerXAnchor, widthAnchorTo: setNameImageView.heightAnchor, heightAnchorTo: heightAnchor, widthMultiplier: 1.0, heightMultiplier: 1.0 / 2.5)
         
-        hiDialogLabelTopConstraint = hiDialogLabel.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0))
+        hiDialogLabelTopConstraint = hiDialogLabel.anchor(top: safeTopAnchor, leading: safeLeadingAnchor, padding: Padding(top: 0, left: 30))
         
-        userNameView.anchor(top: hiDialogLabel.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 30, left: 30, bottom: 0, right: 30))
-        userNameView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        userNameView.anchor(top: hiDialogLabel.bottomAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 30, left: 30, right: 30), height: 50)
         
-        userNameTextField.anchor(top: userNameView.topAnchor, leading: userNameView.leadingAnchor, bottom: userNameView.bottomAnchor, trailing: userNameView.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
+        userNameTextField.anchor(top: userNameView.topAnchor, leading: userNameView.leadingAnchor, bottom: userNameView.bottomAnchor, trailing: userNameView.trailingAnchor, padding: Padding(top: 0, left: 10, bottom: 0, right: 10))
         
-        continueButtonTopConstraint = continueButton.anchor(top: userNameView.bottomAnchor, leading: safeLeadingAnchor, bottom: nil, trailing: safeTrailingAnchor, padding: UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30))
-        continueButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        continueButtonTopConstraint = continueButton.anchor(top: userNameView.bottomAnchor, leading: safeLeadingAnchor, trailing: safeTrailingAnchor, padding: Padding(top: 0, left: 30, right: 30), height: 50)
         
-        errorLabel.anchor(top: userNameView.bottomAnchor, leading: continueButton.leadingAnchor, bottom: nil, trailing: nil, padding: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
+        errorLabel.anchor(top: userNameView.bottomAnchor, leading: continueButton.leadingAnchor, padding: Padding(top: 10, left: 0))
     }
 }
