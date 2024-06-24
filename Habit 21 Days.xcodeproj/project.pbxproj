@@ -223,7 +223,6 @@
 		4A652D972B72555B00F02C6C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				4A652DA52B735A1200F02C6C /* Reachability.swift */,
 				4A652DA12B7263C800F02C6C /* HTTPContentType.swift */,
 				4A652D9B2B7255A100F02C6C /* HTTPMethod.swift */,
 				4A652D9D2B7256B700F02C6C /* Endpoint.swift */,
@@ -276,6 +275,7 @@
 		4AD61A7F2B4ADFF80076A855 /* Habit 21 Days */ = {
 			isa = PBXGroup;
 			children = (
+				4A652DA52B735A1200F02C6C /* Reachability.swift */,
 				4AD61AE72B4AEEB80076A855 /* test.swift */,
 				4AD61AB02B4AE02F0076A855 /* App Delegate */,
 				4A652D972B72555B00F02C6C /* Networking */,
